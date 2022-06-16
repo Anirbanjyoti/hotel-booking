@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import './Home.css'
+import { Link } from "react-router-dom";
 import { Carousel } from "react-bootstrap";
 import slider1 from '../../images/slider1.jpg'
 import slider2 from '../../images/slider2.jpg'
 import slider3 from '../../images/slider3.jpg'
+// import Header from "../Shared/Header/Header";
 
 const Home = () => {
     // React Bootstrap carousal
@@ -19,85 +21,7 @@ const Home = () => {
           <div id="fh5co-header">
             <header id="fh5co-header-section">
               <div className="container-fluid">
-                <div className="nav-header">
-                  <a href="/" className="js-fh5co-nav-toggle fh5co-nav-toggle">
-                    <i></i>
-                  </a>
-                  <h1 id="fh5co-logo">
-                    <a href="index.html">Luxe</a>
-                  </h1>
-                  <nav id="fh5co-menu-wrap" role="navigation">
-                    <ul className="sf-menu" id="fh5co-primary-menu">
-                      <li>
-                        <a className="active" href="index.html">
-                          Home
-                        </a>
-                      </li>
-                      <li>
-                        <a href="hotel.html" className="fh5co-sub-ddown">
-                          Hotel
-                        </a>
-                        <ul className="fh5co-sub-menu">
-                          <li>
-                            <a href="/">Luxe Hotel</a>
-                          </li>
-                          <li>
-                            <a href="/">Deluxe Hotel</a>
-                          </li>
-                          <li>
-                            <a href="/" className="fh5co-sub-ddown">
-                              King Hotel
-                            </a>
-                            <ul className="fh5co-sub-menu">
-                              <li>
-                                <a href="/" target="_blank">
-                                  Build
-                                </a>
-                              </li>
-                              <li>
-                                <a href="/" target="_blank">
-                                  Work
-                                </a>
-                              </li>
-                              <li>
-                                <a href="/" target="_blank">
-                                  Light
-                                </a>
-                              </li>
-                              <li>
-                                <a href="/" target="_blank">
-                                  Relic
-                                </a>
-                              </li>
-                              <li>
-                                <a href="/" target="_blank">
-                                  Display
-                                </a>
-                              </li>
-                              <li>
-                                <a href="/" target="_blank">
-                                  Sprint
-                                </a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="/">Five Star Hotel</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="services.html">Services</a>
-                      </li>
-                      <li>
-                        <a href="blog.html">Blog</a>
-                      </li>
-                      <li>
-                        <a href="contact.html">Contact</a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
+                
 
                 {/* Carrousel */}
                 <>
@@ -173,9 +97,9 @@ const Home = () => {
                           </p>
                           <h2>Reserve Room for Family Vacation</h2>
                           <p>
-                            <a href="/" className="btn btn-primary btn-lg">
+                            <Link to="/registration" className="btn btn-primary btn-lg">
                               Book Now
-                            </a>
+                            </Link>
                           </p>
                         </div>
                       </div>
@@ -195,9 +119,9 @@ const Home = () => {
                           </p>
                           <h2>Make Your Vacation Comfortable</h2>
                           <p>
-                            <a href="/" className="btn btn-primary btn-lg">
+                          <Link to="/registration" className="btn btn-primary btn-lg">
                               Book Now
-                            </a>
+                            </Link>
                           </p>
                         </div>
                       </div>
@@ -217,9 +141,9 @@ const Home = () => {
                           </p>
                           <h2>A Best Place To Enjoy Your Life</h2>
                           <p>
-                            <a href="/" className="btn btn-primary btn-lg">
+                          <Link to="/registration" className="btn btn-primary btn-lg">
                               Book Now
-                            </a>
+                            </Link>
                           </p>
                         </div>
                       </div>
@@ -353,9 +277,9 @@ const Home = () => {
                       malesuada congue{" "}
                     </p>
                     <p>
-                      <a href="/" className="btn btn-primary btn-luxe-primary">
-                        Book Now <i className="ti-angle-right"></i>
-                      </a>
+                    <Link to="/registration" className="btn btn-primary btn-lg">
+                              Book Now
+                            </Link>
                     </p>
                   </div>
                 </div>
@@ -384,12 +308,9 @@ const Home = () => {
                         leo, in suscipit urna condimentum sed.{" "}
                       </p>
                       <p>
-                        <a
-                          href="/"
-                          className="btn btn-primary btn-luxe-primary"
-                        >
-                          Book Now <i className="ti-angle-right"></i>
-                        </a>
+                      <Link to="/registration" className="btn btn-primary btn-lg">
+                              Book Now
+                            </Link>
                       </p>
                     </div>
                   </div>
@@ -416,12 +337,9 @@ const Home = () => {
                         leo, in suscipit urna condimentum sed.{" "}
                       </p>
                       <p>
-                        <a
-                          href="/"
-                          className="btn btn-primary btn-luxe-primary"
-                        >
-                          Book Now <i className="ti-angle-right"></i>
-                        </a>
+                      <Link to="/registration" className="btn btn-primary btn-lg ">
+                              Book Now
+                            </Link>
                       </p>
                     </div>
                   </div>
