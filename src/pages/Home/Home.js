@@ -431,7 +431,7 @@ const Home = () => {
           </div>
 
           <div id="hotel-facilities">
-            <div className="container">
+            {/* <div className="container">
               <div className="row">
                 <div className="col-md-12">
                   <div className="section-title text-center">
@@ -701,7 +701,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div id="testimonial">
