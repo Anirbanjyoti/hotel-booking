@@ -1,6 +1,13 @@
-#fh5co-header {
-    position: relative;
+.registration {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.slider {
-    padding: 0;
+img.coverImg {
+    border-radius: 3% 62% 11% 11%;
+}
+.logForm {
+    border: 1px solid darkgrey;
+    border-radius: 5px;
+    background: antiquewhite;
 }

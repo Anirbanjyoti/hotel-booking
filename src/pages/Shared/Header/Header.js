@@ -16,6 +16,7 @@ const Header = () => {
           </Navbar.Brand>
           <Nav className="my-nav">
             <Link to="/">Home</Link>
+            <Link to="/hotel">Hotel</Link>
             <Link to="/registration">Registration</Link>
             <Link to="/login">Login</Link>
           </Nav>

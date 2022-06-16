@@ -8,7 +8,8 @@
     margin-left: auto !important;
 }
 nav.navbar.navbar-expand.navbar-dark {
-    border-bottom: 1px solid gray;
+    border-bottom: 12px solid gray;
+    margin-bottom: 29px;
     margin: 0;
     padding: 10px 0 30px;
 }
