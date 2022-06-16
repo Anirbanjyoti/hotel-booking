@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Carousel } from "react-bootstrap";
 import slider1 from '../../images/slider1.jpg'
 import slider2 from '../../images/slider2.jpg'
-import slider3 from '../../images/slider3.jpg'
+import slider3 from '../../images/slider_1.jpg'
 // import Header from "../Shared/Header/Header";
 
 const Home = () => {
@@ -20,9 +20,7 @@ const Home = () => {
         <div id="fh5co-page">
           <div id="fh5co-header">
             <header id="fh5co-header-section">
-              <div className="container-fluid">
-                
-
+              <div className="container-fluid slider">
                 {/* Carrousel */}
                 <>
                   <Carousel activeIndex={index} onSelect={handleSelect}>
@@ -97,7 +95,7 @@ const Home = () => {
                           </p>
                           <h2>Reserve Room for Family Vacation</h2>
                           <p>
-                            <Link to="/registration" className="btn btn-primary btn-lg">
+                            <Link to="/login" className="btn btn-primary btn-lg">
                               Book Now
                             </Link>
                           </p>
@@ -141,7 +139,7 @@ const Home = () => {
                           </p>
                           <h2>A Best Place To Enjoy Your Life</h2>
                           <p>
-                          <Link to="/registration" className="btn btn-primary btn-lg">
+                          <Link to="/login" className="btn btn-primary btn-lg">
                               Book Now
                             </Link>
                           </p>
@@ -277,7 +275,7 @@ const Home = () => {
                       malesuada congue{" "}
                     </p>
                     <p>
-                    <Link to="/registration" className="btn btn-primary btn-lg">
+                    <Link to="/login" className="btn btn-primary btn-lg">
                               Book Now
                             </Link>
                     </p>
@@ -337,7 +335,7 @@ const Home = () => {
                         leo, in suscipit urna condimentum sed.{" "}
                       </p>
                       <p>
-                      <Link to="/registration" className="btn btn-primary btn-lg ">
+                      <Link to="/login" className="btn btn-primary btn-lg ">
                               Book Now
                             </Link>
                       </p>
