@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Registration.css";
-import {createUserWithEmailAndPassword } from "firebase/auth";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 
 const Registration = () => {
@@ -12,6 +12,11 @@ const Registration = () => {
   const [confirmPassword, setConfirmPassword] = useState(" ");
   const [successMessage, setSuccessMessage] = useState(" ");
   const [error, setError] = useState(" ");
+  const [validated, setValidated] = useState(false);
+  const navigate = useNavigate();
+
+  const [createUserWithEmailAndPassword, user] =
+    useCreateUserWithEmailAndPassword(auth);
 
   const handleOnBlurEmail = (e) => {
     setEmail(e.target.value);
@@ -22,47 +27,55 @@ const Registration = () => {
   const handleOnBlurConfirmPassword = (e) => {
     setConfirmPassword(e.target.value);
   };
+  if (user) {
+    navigate("/hotel");
+  }
   const handleCreateUser = (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password,confirmPassword)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log(user);
-        const Message = 'Successfully Created !'
-        setSuccessMessage(Message)
-        setError(' ');
-        // ...
-      })
-      .catch((error) => {
-        const errorMessage = error.message;
-        console.error(errorMessage);
-        if(password !==confirmPassword){
-            setError('Your Password and confirmPassword is not same!');
-            return;
-        }
-        if(password.length<6){
-            setError('Password should be at least 6 characters!');
-            return;
-        }
+    // validation
+    const form = e.currentTarget;
+    if (form.checkValidity() === false) {
+      e.stopPropagation();
+      return;
+    }
+    setValidated(true);
 
-        // ..
-      });
+        const Message = "Successfully Created !";
+        setSuccessMessage(Message);
+        setEmail(" ");
+        setPassword(" ");
+        setConfirmPassword(" ");
+        setError(" ");
+       
+        if (password !== confirmPassword) {
+          setError("Your Password and confirmPassword is not same!");
+          return;
+        }
+        if (password.length < 6) {
+          setError("Password should be at least 6 characters!");
+          return;
+        }
+    createUserWithEmailAndPassword(email, password);
   };
 
   return (
     <div className="cus-form mt-5">
-      <Form onSubmit={handleCreateUser}>
+      <h1 className="mb-5">Registration Please!</h1>
+      <Form noValidate validated={validated} onSubmit={handleCreateUser}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
             onBlur={handleOnBlurEmail}
             type="email"
-            placeholder="Enter email" required
+            placeholder="Enter email"
+            required
           />
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
           </Form.Text>
+          <Form.Control.Feedback type="invalid">
+            Please choose a valid Email.
+          </Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -71,6 +84,7 @@ const Registration = () => {
             onBlur={handleOnBlurPassword}
             type="password"
             placeholder="Password"
+            required
           />
         </Form.Group>
 
@@ -80,14 +94,18 @@ const Registration = () => {
             onBlur={handleOnBlurConfirmPassword}
             type="password"
             placeholder="Confirm Password"
+            required
           />
         </Form.Group>
+        <Form.Control.Feedback type="invalid">
+          Please choose a Password.
+        </Form.Control.Feedback>
         {/* <Form.Group className="mb-3" controlId="formBasicCheckbox">
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group> */}
-      <p style={{color:'green'}}>{successMessage}</p>
-      <p>{error}</p>
-       
+        <p style={{ color: "green" }}>{successMessage}</p>
+        <p style={{ color: "red" }}>{error}</p>
+
         <Button variant="primary" type="submit" size="lg">
           Submit
         </Button>

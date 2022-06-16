@@ -10,7 +10,7 @@ const Home = () => {
         <div>
         <div className="registration mt-5 px-5">
             <div className='logForm p-5 b-1'>
-            <h2>Please Login to Book Cheapest Hotel!</h2>
+            <h2>Please Login To Book Cheapest Hotel Room!</h2>
                 <Login></Login>
             </div>
             <div>
